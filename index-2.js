@@ -39,5 +39,24 @@ const teams = [
 
 //Funzione per generare numeri random
 function getRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+//Ciclo FOR per generare numeri random per i punti e per i falli
+for (let i = 0; i < teams.length; i++) {
+    teams[i].punti = getRandomNumber(1, 90);
+    teams[i].falli = getRandomNumber(1, 30);
+};
+
+//Nuovo array per nome e falli
+const nomiPiuFalli = [];
+
+//Ciclo FOR per inserire nome e falli nel nuovo array
+for (let i = 0; i < teams.length; i++) {
+    nomiPiuFalli.push({
+        nome: teams[i].nome,
+        falli: teams[i].falli
+    });
 }
+
+console.log(nomiPiuFalli);
